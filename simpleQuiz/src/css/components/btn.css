@@ -1,0 +1,9 @@
+@layer components{
+  .btn{
+    @apply p-2 text-base text-center text-white duration-300 ;
+  }
+
+  .btn-primary{
+    @apply bg-pink-500 rounded-sm hover:bg-pink-700
+  }
+}

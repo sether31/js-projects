@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO</title>
+  <link rel="stylesheet" href="dist/output.css">
+</head>
+<body>
+
+  <main class="px-4 sm:max-w-2xl sm:mx-auto">
+    <section class="flex justify-center gap-2 my-8">
+      <div class="tab-nav active-tab" id="tab-active">Active</div>
+      <div class="tab-nav" id="tab-completed">Completed</div>
+    </section>
+
+    <div class="block" id="active-container">
+      <div class="flex justify-center gap-2 my-8">
+        <input 
+          class="px-4 py-3 border rounded-md"
+          type="text" 
+          name="search-input" 
+          id="search-input"
+          placeholder="Search task..."
+        >
+        <button
+          class="px-4 py-3 bg-white border rounded-md hover:bg-slate-500 hover:text-white duration-300 ease-in-out"
+          id="add-task"
+          type="button">
+          Add Task
+        </button>
+      </div>
+      
+      <section class="grid grid-cols-1 gap-2 mt-6" id="task-container"></section>
+    </div>
+
+    <div class="hidden" id="completed-container">
+      <section class="grid grid-cols-1 gap-2 mt-6" id="complete-container"></section>
+    </div>
+  </main>
+
+
+  <div
+  id="add-task-modal"
+  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-zinc-50 z-1 shadow-lg min-h-[500px] w-[300px] md:w-[400px] p-4 rounded-lg hidden">
+    <form method="post" class="grid gap-4" id="add-task-form">
+
+      <i class="text-lg font-medium hover:text-red-700 absolute right-[1rem]" aria-label="close add task modal" id="close-add-modal">X</i>
+
+      <div class="grid gap-2 mt-6">
+        <label for="add-title" class="text-base tracking-wide">Title:</label>
+        <input 
+          class="px-4 py-3 border rounded-md min-w-full"
+          type="text" 
+          name="add-title" 
+          id="add-title"
+          required
+        >
+      </div>
+
+      <div class="grid gap-2">
+        <label for="add-description" class="text-base tracking-wide">Description:</label>
+        <textarea 
+          class="min-w-full min-h-[200px] p-4"
+          name="add-description" 
+          id="add-description"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" class="p-2 bg-slate-500 text-white text-base rounded-md hover:bg-slate-400 duration-300 ease-in-out">Add task</button>
+    </form>
+  </div>
+
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

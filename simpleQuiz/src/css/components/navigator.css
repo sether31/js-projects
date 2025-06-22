@@ -1,0 +1,9 @@
+@layer components{
+  .nav{
+    @apply pb-1 text-lg font-medium duration-300 border-b-2 md:text-xl hover:border-pink-700;
+  }
+
+  .nav-active{
+    @apply border-pink-700;
+  }
+}
