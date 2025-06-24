@@ -1,4 +1,4 @@
-import { quizManager } from "../logic/quizManager.js";
+import quizManager from '../logic/quizManager.js';
 
 const manager = quizManager();
 
@@ -82,12 +82,12 @@ export const handleQuizSubmission = (e) => {
   // to get the question and choices values
   for(let i = 1; i <= numQuestions; i++){
     const questionText = document.querySelector(`#question-${i}`).value;
-    const choices = [
-      document.querySelector(`#choice-${i}-a`).value,
-      document.querySelector(`#choice-${i}-b`).value,
-      document.querySelector(`#choice-${i}-c`).value,
-      document.querySelector(`#choice-${i}-d`).value
-    ];
+    const choices = {
+      a: document.querySelector(`#choice-${i}-a`).value,
+      b: document.querySelector(`#choice-${i}-b`).value,
+      c: document.querySelector(`#choice-${i}-c`).value,
+      d: document.querySelector(`#choice-${i}-d`).value
+    };
 
     const isSelectAnswer = document.querySelector(`input[name="answer-${i}"]:checked`);
 
@@ -96,7 +96,7 @@ export const handleQuizSubmission = (e) => {
       return;
     }
 
-    const correctAnswer = document.querySelector(`#choice-${i}-${isSelectAnswer.value}`).value;
+    const correctAnswer = isSelectAnswer.value;
 
     questions.push({
       question: questionText,

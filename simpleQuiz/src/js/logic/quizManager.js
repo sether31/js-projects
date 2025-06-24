@@ -1,4 +1,4 @@
-export const quizManager = function(){
+const quizManager = function(){
   const STORAGE_KEY = 'quizzes';
 
   const load = () => {
@@ -68,3 +68,5 @@ export const quizManager = function(){
     }
   }
 }
+
+export default quizManager;

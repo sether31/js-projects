@@ -1,4 +1,4 @@
-import { quizManager } from "../src/js/logic/quizManager.js";
+import quizManager from "../src/js/logic/quizManager.js";
 
 beforeAll(() => {
   global.localStorage = {
@@ -30,7 +30,7 @@ describe("Delete quiz from quizzes", ()=>{
 
   test('Delete quiz', ()=>{
     const quiz = manager.createQuiz(
-      'title', 1, [ { question: '2+2', choices: [1, 2, 3, 4], answer: 4 } ]
+      'Quiz 1', 1, [{ question: '1+1?', choices: { a: 1, b: 2, c: 3, d: 4}, answer: 'b' }]
     );
 
     expect(manager.getAllQuizzes()).toHaveLength(1);

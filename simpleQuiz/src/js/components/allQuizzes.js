@@ -1,4 +1,4 @@
-import { quizManager } from '../logic/quizManager.js'
+import quizManager from '../logic/quizManager.js';
 
 const manager = quizManager();
 export const renderAllQuizzes = () => {

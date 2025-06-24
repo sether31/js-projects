@@ -1,4 +1,4 @@
-import { quizManager } from "../src/js/logic/quizManager.js";
+import quizManager from "../src/js/logic/quizManager.js";
 
 beforeAll(() => {
   global.localStorage = {
@@ -27,18 +27,22 @@ describe('Generating quiz', () => {
   });
 
   test('Create quiz', () => {
-    const quiz = manager.createQuiz('title', 1, [
-      { question: '2+2', choices: [1, 2, 3, 4], answer: 4 }
-    ]);
+    const quiz = manager.createQuiz(
+      'title', 1, [{ question: '1+1?', choices: { a: 1, b: 2, c: 3, d: 4}, answer: 'b' }]
+    );
 
     expect(quiz.title).toBe('title');
     expect(quiz.questions).toHaveLength(1);
-    expect(quiz.questions[0].question).toBe('2+2');
+    expect(quiz.questions[0].question).toBe('1+1?');
   });
 
   test('Create multiple quizzes', () => {
-    manager.createQuiz('Quiz 1', 1, [{ question: '1+1?', choices: [1, 2, 4, 4], answer: 2 }]);
-    manager.createQuiz('Quiz 2', 1, [{ question: '3+3?', choices: [2, 4, 6, 8], answer: 6 }]);
+    manager.createQuiz(
+      'Quiz 1', 1, [{ question: '1+1?', choices: { a: 1, b: 2, c: 3, d: 4}, answer: 'b' }]
+    );
+    manager.createQuiz(
+      'Quiz 2', 1, [{ question: '3+3?', choices: { a: 2, b: 4, c: 6, d: 8}, answer: 'c' }]
+    );
 
     const quizzes = manager.getAllQuizzes();
 
