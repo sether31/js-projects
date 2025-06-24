@@ -31,9 +31,9 @@ describe('Generating quiz', () => {
       { question: '2+2', choices: [1, 2, 3, 4], answer: 4 }
     ]);
 
-    expect(quiz[0].title).toBe('title');
-    expect(quiz[0].questions).toHaveLength(1);
-    expect(quiz[0].questions[0].question).toBe('2+2');
+    expect(quiz.title).toBe('title');
+    expect(quiz.questions).toHaveLength(1);
+    expect(quiz.questions[0].question).toBe('2+2');
   });
 
   test('Create multiple quizzes', () => {

@@ -27,14 +27,44 @@ export const quizManager = function(){
 
       quizzes.push(quiz);
       save(quizzes);
-      return this.getAllQuizzes();
+      return quiz;
     },
     getAllQuizzes() {
       return load();
     },
     clearAll() {
       localStorage.removeItem(STORAGE_KEY);
-    }
+    },
+    deleteQuiz(id){
+      const data = load();
+      const index = data.findIndex(quiz => quiz.id === id);
 
+      if(index !== -1){
+        const [deleted] = data.splice(index, 1);
+        alert(`Deleted quiz: ${deleted.title}`);
+        save(data);
+        return true;
+      }
+
+      alert("Quiz not found.");
+      return false;
+    },
+    updateQuiz(id, newData){
+      const data = load();
+      const index = data.findIndex(quiz => quiz.id === id);
+
+      if(index !== -1){
+        data[index] = {
+          ...data[index],
+          title: newData.title.trim() || data[index].title,
+          questions: Array.isArray(newData.questions) ? newData.questions : data[index].questions
+        }
+
+        save(data);
+        return true;
+      }
+      alert("Quiz not found.");
+      return false;
+    }
   }
 }
