@@ -32,6 +32,11 @@ const quizManager = function(){
     getAllQuizzes() {
       return load();
     },
+    findQuiz(quizId) {
+      const quizzes = load();
+      return quizzes.find(x => x.id === quizId) || null;
+    }
+    ,
     clearAll() {
       localStorage.removeItem(STORAGE_KEY);
     },
