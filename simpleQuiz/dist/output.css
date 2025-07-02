@@ -915,6 +915,18 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
+.underline-offset-\[3px\] {
+  text-underline-offset: 3px;
+}
+
+.underline-offset-4 {
+  text-underline-offset: 4px;
+}
+
 .accent-pink-700 {
   accent-color: #be185d;
 }
@@ -994,6 +1006,19 @@ video {
 .hover\:bg-pink-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(190 24 93 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:text-pink-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity, 1));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
+.hover\:underline-offset-\[3px\]:hover {
+  text-underline-offset: 3px;
 }
 
 .focus\:outline-pink-700:focus {

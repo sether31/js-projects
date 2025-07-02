@@ -16,7 +16,7 @@ if(quiz) {
 }
 
 const quizTitle = document.querySelector('#title');
-quizTitle.textContent = quiz.title;
+quizTitle.textContent = capitalizeFirstLetter(quiz.title);
 
 function renderTakeQuiz() {
   quiz.questions.forEach((data, index) => {

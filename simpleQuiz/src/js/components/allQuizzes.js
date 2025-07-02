@@ -1,4 +1,5 @@
 import quizManager from '../logic/quizManager.js';
+import capitalizeFirstLetter from '../utilities/capitalizeFirstLetter.js';
 
 const manager = quizManager();
 export const renderAllQuizzes = () => {
@@ -53,14 +54,15 @@ export const createCard = (quiz) => {
   cardBody.classList.add("grid", "gap-2", "p-2");
 
   // card title
-  const title = document.createElement('h2');
-  title.classList.add("mt-4" ,"text-base", "font-medium", "sm:text-lg");
-  title.textContent = quiz.title;
+  const title = document.createElement('a');
+  title.href = `./takeQuiz.html?id=${quiz.id}`;
+  title.classList.add("mt-4" ,"text-base", "font-medium", "sm:text-lg", "hover:text-pink-500", "underline", "underline-offset-4", "hover:underline-pink-500", "duration-300");
+  title.textContent = capitalizeFirstLetter(quiz.title);
 
   // card description
   const description = document.createElement('p');
   description.classList.add("mb-4", "text-base");
-  description.textContent = `This quiz is 1-${quiz.size} long.`;
+  description.textContent = `This quiz is 1 to ${quiz.size} long.`;
 
   // btn container
   const btnContainer = document.createElement('div');
