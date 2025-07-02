@@ -11,7 +11,7 @@ export const generateQuiz = () => {
   title.name = "title";
   title.id = "title";
   title.placeholder = "Title"
-  title.classList.add("border-2", "rounded-md", "w-full", "p-2", "sm:w-[80%]", "mx-auto", "border-gray-400", "focus:outline-pink-700");
+  title.className = "border-2 rounded-md w-full p-2 sm:w-[80%] mx-auto border-gray-400";
   title.setAttribute('required', '');
   form.appendChild(title);
 
