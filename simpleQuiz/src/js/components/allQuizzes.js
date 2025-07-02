@@ -2,6 +2,106 @@ import quizManager from '../logic/quizManager.js';
 import capitalizeFirstLetter from '../utilities/capitalizeFirstLetter.js';
 
 const manager = quizManager();
+
+// test dummy
+if(manager.getAllQuizzes().length === 0){
+  // makeup
+   manager.createQuiz(
+    "Makeup Basics Quiz (TEST DUMMY)",
+    5,
+    [
+      {
+        question: "Which product is typically used to even out the skin tone?",
+        choices: { a: "Mascara", b: "Foundation", c: "Lipstick", d: "Blush" },
+        answer: "b"
+      },
+      {
+        question: "What is used to make eyelashes look longer and darker?",
+        choices: { a: "Eyeliner", b: "Concealer", c: "Mascara", d: "Highlighter" },
+        answer: "c"
+      },
+      {
+        question: "Which product adds color to the cheeks?",
+        choices: { a: "Blush", b: "Brow Gel", c: "Primer", d: "Contour" },
+        answer: "a"
+      },
+      {
+        question: "What do you apply before foundation to help makeup last longer?",
+        choices: { a: "Setting Spray", b: "Primer", c: "Powder", d: "Balm" },
+        answer: "b"
+      },
+      {
+        question: "What does the acronym 'GRWM' stand for in beauty content?",
+        choices: {
+          a: "Glow Really With Makeup",
+          b: "Get Ready With Me",
+          c: "Go Run With Mascara",
+          d: "Glam Routine With Moisturizer"
+        },
+        answer: "b"
+      }
+    ]
+  );
+
+  // code
+  manager.createQuiz(
+    'Code basics (TEST DUMMY)',
+    5,
+    [
+      {
+        question: "What does WCAG stand for?",
+        choices: {
+          a: "Web Content Accessibility Guidelines",
+          b: "Web Code and Accessibility Guide",
+          c: "Wide Community Accessibility Guide",
+          d: "Web Compatibility and Adaptability Guide"
+        },
+        answer: "a"
+      },
+      {
+        question: "In WCAG, what is the purpose of providing sufficient color contrast?",
+        choices: {
+          a: "Make the site prettier",
+          b: "Help people read text more easily",
+          c: "Speed up loading time",
+          d: "Reduce file size"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which WCAG principle focuses on making content understandable to users?",
+        choices: {
+          a: "Perceivable",
+          b: "Operable",
+          c: "Understandable",
+          d: "Robust"
+        },
+        answer: "c"
+      },
+      {
+        question: "What does 'async' mean in JavaScript?",
+        choices: {
+          a: "Run code faster by skipping it",
+          b: "Pause execution forever",
+          c: "Allow functions to run without blocking other code",
+          d: "Convert code to HTML"
+        },
+        answer: "c"
+      },
+      {
+        question: "What keyword is usually paired with 'async' to wait for a promise to resolve?",
+        choices: {
+          a: "then",
+          b: "wait",
+          c: "pause",
+          d: "await"
+        },
+        answer: "d"
+      }
+    ]
+  );
+}
+
 export const renderAllQuizzes = () => {
   const container = document.querySelector('#content');
   container.innerHTML = ''
