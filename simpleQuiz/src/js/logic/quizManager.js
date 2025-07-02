@@ -29,18 +29,7 @@ const quizManager = function(){
       save(quizzes);
       return quiz;
     },
-    getAllQuizzes() {
-      return load();
-    },
-    findQuiz(quizId) {
-      const quizzes = load();
-      return quizzes.find(x => x.id === quizId) || null;
-    }
-    ,
-    clearAll() {
-      localStorage.removeItem(STORAGE_KEY);
-    },
-    deleteQuiz(id){
+    deleteQuiz(id) {
       const data = load();
       const index = data.findIndex(quiz => quiz.id === id);
 
@@ -54,7 +43,7 @@ const quizManager = function(){
       alert("Quiz not found.");
       return false;
     },
-    updateQuiz(id, newData){
+    updateQuiz(id, newData) {
       const data = load();
       const index = data.findIndex(quiz => quiz.id === id);
 
@@ -70,7 +59,18 @@ const quizManager = function(){
       }
       alert("Quiz not found.");
       return false;
+    },
+    getAllQuizzes() {
+      return load();
+    },
+    findQuiz(quizId) {
+      const quizzes = load();
+      return quizzes.find(x => x.id === quizId) || null;
     }
+    ,
+    clearAll() {
+      localStorage.removeItem(STORAGE_KEY);
+    },
   }
 }
 

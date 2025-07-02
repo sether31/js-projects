@@ -3,6 +3,7 @@ import quizManager from '../logic/quizManager.js';
 const manager = quizManager();
 export const renderAllQuizzes = () => {
   const container = document.querySelector('#content');
+  container.innerHTML = ''
   if (!container) return;
 
   const totalQuizzes = manager.getAllQuizzes();
@@ -21,8 +22,25 @@ export const renderAllQuizzes = () => {
 
 export const createCard = (quiz) => {
   const card = document.createElement('div');
-  card.classList.add("rounded-md", "shadow-lg");
+  card.classList.add("rounded-md", "shadow-lg", "relative");
   card.setAttribute('data-id', quiz.id);
+
+  // delete quiz
+  const deleteQuiz = document.createElement('button');
+  deleteQuiz.textContent = "Delete";
+  deleteQuiz.classList.add("absolute", "top-0", "right-0", "bg-pink-500", "max-content", "p-2", "text-white", "rounded-bl-md", "rounded-tr-md", "cursor-pointer", "hover:bg-pink-700", "duration-300");
+  deleteQuiz.setAttribute('aria-label', "Delete Quiz");
+  card.appendChild(deleteQuiz);
+
+  deleteQuiz.onclick = () =>{
+    const quizId = card.dataset.id;
+
+    const result = confirm("Are you sure you want to delete this quiz?");
+    if(result){
+      manager.deleteQuiz(quizId);
+      renderAllQuizzes();
+    } 
+  }
 
   // card img
   const img = document.createElement('img');
