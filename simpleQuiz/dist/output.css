@@ -884,16 +884,6 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.focus\:border-pink-700:focus {
-  --tw-border-opacity: 1;
-  border-color: rgb(190 24 93 / var(--tw-border-opacity, 1));
-}
-
-.focus\:bg-pink-700:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 24 93 / var(--tw-bg-opacity, 1));
-}
-
 .focus\:outline-pink-700:focus {
   outline-color: #be185d;
 }

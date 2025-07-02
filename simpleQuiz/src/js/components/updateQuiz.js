@@ -26,7 +26,7 @@ export const generateQuiz = () => {
     form.appendChild(wrapper.firstElementChild);
   }
 
- form.appendChild(submitBtn());
+ form.appendChild(updateBtn());
  form.onsubmit = handleQuizSubmission;
 }
 
@@ -70,13 +70,13 @@ export const createChoicesBlock = (index, choice, value, correctAnswer) => {
   `;
 }
 
-export const submitBtn = () => {
-  const submitBtn = document.createElement('button');
-  submitBtn.textContent = 'Submit Quiz';
-  submitBtn.type = 'submit';
-  submitBtn.classList.add('btn', 'btn-primary');
+export const updateBtn = () => {
+  const updateBtn = document.createElement('button');
+  updateBtn.textContent = 'Update Quiz';
+  updateBtn.type = 'submit';
+  updateBtn.classList.add('btn', 'btn-primary');
   
-  return submitBtn;
+  return updateBtn;
 }
 
 export const handleQuizSubmission = (e) => {
