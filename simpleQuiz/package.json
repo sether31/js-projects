@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/css/input.css -o ./dist/output.css --minify",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest"
