@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scratch</title>
+</head>
+<body>
+
+<label>
+    Password:
+    <input type="password" aria-describedby="password-reqs" />
+</label>
+<span id="password-reqs">Your password must contain:
+  <ul>
+    <li>At least one capital letter</li>
+    <li>At least one number</li>
+    <li>At least one special character</li>
+  </ul>
+</span>
+
+
+
+  
+  <img src="" style="width: 300px;" alt="">
+
+  <script>
+    async function pokemon(character) {
+      try {
+        const api = `https://pokeapi.co/api/v2/pokemon/${character}`;
+        const response = await fetch(api);
+        console.log(response);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json()
+        console.log(data)
+        document.querySelector('img').src = data.sprites.front_default;
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    pokemon('charizard')
+  </script>
+</body>
+</html>

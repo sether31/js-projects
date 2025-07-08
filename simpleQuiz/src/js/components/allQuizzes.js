@@ -170,13 +170,13 @@ export const createCard = (quiz) => {
 
   // card submit btn
   const submit = document.createElement('a');
-  submit.href = `./takeQuiz.html?id=${quiz.id}`;
+  submit.href = `./public/takeQuiz.html?id=${quiz.id}`;
   submit.classList.add("btn", "btn-primary");
   submit.textContent = "Take Quiz";
 
   // card update
   const update = document.createElement('a');
-  update.href = `./updateQuiz.html?id=${quiz.id}`;
+  update.href = `./public/updateQuiz.html?id=${quiz.id}`;
   update.classList.add("btn", "btn-secondary");
   update.textContent = "Update Quiz";
 
