@@ -55,7 +55,7 @@ function renderTakeQuiz() {
   const submitBtn = document.createElement('button');
   submitBtn.textContent = 'Submit Quiz';
   submitBtn.type = 'submit';
-  submitBtn.classList.add('btn', 'btn-primary');
+  submitBtn.classList.add('btn', 'btn-primary', 'mb-10');
   form.appendChild(submitBtn)
 }
 
