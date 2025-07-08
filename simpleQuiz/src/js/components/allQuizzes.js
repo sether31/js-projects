@@ -155,7 +155,7 @@ export const createCard = (quiz) => {
 
   // card title
   const title = document.createElement('a');
-  title.href = `./takeQuiz.html?id=${quiz.id}`;
+  title.href = `./public/takeQuiz.html?id=${quiz.id}`;
   title.classList.add("mt-4" ,"text-base", "font-medium", "sm:text-lg", "hover:text-pink-500", "underline", "underline-offset-4", "hover:underline-pink-500", "duration-300");
   title.textContent = capitalizeFirstLetter(quiz.title);
 
